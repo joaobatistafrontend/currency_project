@@ -12,9 +12,11 @@ class HomeView(TemplateView):
         base = request.POST.get("base")
         target = request.POST.get("target")
 
+        #chama a rota que salva a taxa
         url = f"http://127.0.0.1:8000/currency/fetch/?base={base}&target={target}"
         response = requests.get(url).json()
 
+        #taxa retornada
         rate = response.get("rate")
 
         context = self.get_context_data(
@@ -28,5 +30,5 @@ class CurrencyListView(ListView):
     model = CurrencyRate
     template_name = "currency_list.html"
     context_object_name = "rates"
-    ordering = ["-created_at"]
-    paginate_by = 15
+    ordering = ["-created_at"] #ordena por mais recente
+    paginate_by = 15 #paginação

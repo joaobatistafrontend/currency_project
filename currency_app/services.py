@@ -10,6 +10,7 @@ def get_currency_rate(base, target):
         if "rates" not in data:
             return {"error": "Falha ao obter taxa"}
 
+        #pegar valor da moeda desejada
         rate = data["rates"].get(target)
 
         if rate is None:

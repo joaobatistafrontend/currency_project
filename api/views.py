@@ -7,6 +7,7 @@ from .serializers import CurrencyRateSerializer
 class RateListAPIView(generics.ListAPIView):
     serializer_class = CurrencyRateSerializer
 
+    #filtra o queryset de acordo com parâmetros GET
     def get_queryset(self):
         base = self.request.GET.get("base")
         target = self.request.GET.get("target")
