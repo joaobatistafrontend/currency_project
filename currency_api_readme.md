@@ -23,8 +23,8 @@ web ou API.
 
 ### 1️⃣ Clonar o repositório
 
-    git clone seu_repositorio.git
-    cd seu_repositorio
+    git clone https://github.com/joaobatistafrontend/currency_project.git
+    cd currency_project
 
 ### 2️⃣ Criar e ativar o ambiente virtual
 
